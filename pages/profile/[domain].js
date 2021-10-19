@@ -118,9 +118,7 @@ export default function Profile() {
     window.setTimeout(() => setCopied(false), 2000)
   }
 
-  // ------------------------------
-  // Get data from ENS & Moralis
-  useEffect(async () => {
+  async function doStuff() {
     if (!domain) return
 
     await setLoading(true)
@@ -156,7 +154,12 @@ export default function Profile() {
       scrollview?.removeEventListener('scroll', handleScroll)
       scrollview?.removeEventListener('resize', handleScroll)
     }
+  }
 
+  // ------------------------------
+  // Get data from ENS & Moralis
+  useEffect(() => {
+    doStuff()
   }, [ domain ])
 
 
