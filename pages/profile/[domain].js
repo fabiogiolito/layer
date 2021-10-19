@@ -245,7 +245,7 @@ export default function Profile() {
               <div className="w-full min-h-full p-3 lg:p-10 grid place-items-center">
                 <div className="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-4 lg:gap-10 p-2 lg:p-24">
                   {nfts.map( nft => (
-                    <div className="bg-black bg-opacity-25 p-2 rounded-lg">
+                    <div key={`nft-gallery-${nft.token_address}-${nft.token_id}`} className="bg-black bg-opacity-25 p-2 rounded-lg">
                       <img className="block w-full max-w-full rounded mb-1" key={`${nft.token_address}-${nft.token_id}`} src={nftImageUrl(nft)} />
                       <p className="break-all text-xs lg:text-sm">{nft.name}</p>
                     </div>
